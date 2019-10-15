@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    .active{
+      cursor:pointer;
+      color:blue;
+      text-decoration: underline;
+    }
+    .disabled{
+      cursor:default;
+      color:grey;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+<div id="app">
+  <h2 v-bind:class="{active:active,disabled:disabled}">{{message}}</h2>
+  <button id="btn" v-on:click="btnClickHandler">test</button>
+</div>
+
+<script src="../js/vue.js"></script>
+<script>
+  const app=new Vue({
+    el:'#app',
+    data:{
+      message:'你好啊',
+      active:true,
+      disabled:false
+    },
+    methods:{
+      btnClickHandler:function(event){
+        const test=el;
+        this.active=!this.active;
+        this.disabled=!this.disabled;
+      }
+    }
+  });
+</script>
+</body>
+</html>
