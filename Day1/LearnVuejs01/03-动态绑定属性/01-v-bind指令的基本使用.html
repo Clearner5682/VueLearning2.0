@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<div id="app">
+<!--  <img v-bind:src="imageUrl" alt="">
+  <a v-bind:href="aHref">百度一下</a>-->
+  <img :src="imageUrl" alt="">
+  <a :href="aHref">百度一下</a>
+</div>
+
+<script src="../js/vue.js"></script>
+<script>
+  const app=new Vue({
+    el:'#app',
+    data:{
+      message:'你好啊',
+      imageUrl:'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1571152026062&di=822ae26e47ec9fb107ecde3aaeabc833&imgtype=0&src=http%3A%2F%2Fhbimg.b0.upaiyun.com%2Ff39f6fa8183fa9d2320777912cdd4c8d01fe0f192b8e-33odmu_fw658',
+      aHref:'http://www.baidu.com'
+    }
+  });
+</script>
+</body>
+</html>
