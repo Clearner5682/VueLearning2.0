@@ -1,7 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="09e2e1cc-4dcb-45e1-a7b6-d92223751488" name="Default Changelist" comment="" />
+    <list default="true" id="09e2e1cc-4dcb-45e1-a7b6-d92223751488" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/Administrator.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/03-动态绑定属性/05-v-bind动态绑定style（对象语法）.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/03-动态绑定属性/06-v-bind动态绑定style（数组语法）.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/04-计算属性/01-计算属性的基本使用.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/04-计算属性/02-计算属性的复杂操作.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/03-动态绑定属性/02-v-bind动态绑定class对象语法.html" beforeDir="false" afterPath="$PROJECT_DIR$/03-动态绑定属性/02-v-bind动态绑定class对象语法.html" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,6 +24,9 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
   <component name="JsFlowSettings">
     <service-enabled>true</service-enabled>
     <exe-path />
@@ -22,8 +34,10 @@
     <auto-save>true</auto-save>
   </component>
   <component name="ProjectId" id="1S19dpNBOvofoDdHlvy1ZIXR0bo" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="settings.editor.selected.configurable" value="editing.templates" />
     <property name="ts.external.directory.path" value="D:\WebStorm\WebStorm 2019.2.3\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
@@ -67,11 +81,26 @@
       <workItem from="1570802676633" duration="3234000" />
       <workItem from="1570952089498" duration="8721000" />
       <workItem from="1571063856141" duration="3115000" />
-      <workItem from="1571141889511" duration="8730000" />
+      <workItem from="1571141889511" duration="9029000" />
+      <workItem from="1571231868766" duration="424000" />
+      <workItem from="1571232311623" duration="5809000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
