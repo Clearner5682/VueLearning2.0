@@ -2,14 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="09e2e1cc-4dcb-45e1-a7b6-d92223751488" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/Administrator.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/03-动态绑定属性/05-v-bind动态绑定style（对象语法）.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/03-动态绑定属性/06-v-bind动态绑定style（数组语法）.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/04-计算属性/01-计算属性的基本使用.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/04-计算属性/02-计算属性的复杂操作.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/03-动态绑定属性/02-v-bind动态绑定class对象语法.html" beforeDir="false" afterPath="$PROJECT_DIR$/03-动态绑定属性/02-v-bind动态绑定class对象语法.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -83,7 +76,8 @@
       <workItem from="1571063856141" duration="3115000" />
       <workItem from="1571141889511" duration="9029000" />
       <workItem from="1571231868766" duration="424000" />
-      <workItem from="1571232311623" duration="5809000" />
+      <workItem from="1571232311623" duration="6108000" />
+      <workItem from="1571317186519" duration="187000" />
     </task>
     <servers />
   </component>
