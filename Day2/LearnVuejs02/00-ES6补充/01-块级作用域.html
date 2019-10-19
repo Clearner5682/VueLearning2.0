@@ -37,6 +37,16 @@
   //     })
   //   })(i)
   // }
+
+  // 闭包其实就是立即执行匿名函数，以下是立即执行非匿名函数的代码，与闭包的效果相同
+  for(var i=0;i<buttons.length;i++){
+    var func=function(index){
+      buttons[index].addEventListener('click',function(){
+        console.log('按钮'+index+'被点击');
+      })
+    };
+    func(i);
+  }
 </script>
 </body>
 </html>
