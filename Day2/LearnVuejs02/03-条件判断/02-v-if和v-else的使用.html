@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<div id="app">
+  <div v-if="isShow">
+    <h2>姓名：{{name}}</h2>
+    <h2>年龄：{{age}}</h2>
+    <h2>身高：{{height}}</h2>
+  </div>
+  <div v-else>
+    <h1>没有数据</h1>
+  </div>
+</div>
+
+<script src="../js/vue.js"></script>
+<script>
+  const app=new Vue({
+    el:'#app',
+    data:{
+      name:'hongyan',
+      age:27,
+      height:1.77,
+      isShow:true
+    }
+  });
+</script>
+</body>
+</html>

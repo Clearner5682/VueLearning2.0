@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<div id="div" style="border:1px solid grey;text-align: center;vertical-align: center;height:100px;">
+  <button id="btn">button</button>
+</div>
+
+<script>
+  const div=document.getElementById('div');
+  const btn=document.getElementById('btn');
+
+  div.addEventListener('click',function(event){
+    console.log(event.currentTarget.id+'被点击');
+  },false)
+
+  btn.addEventListener('click',function(event){
+    console.log(event.currentTarget.id+'被点击');
+    event.stopPropagation();
+  },false)
+</script>
+</body>
+</html>

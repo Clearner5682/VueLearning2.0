@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<div id="app">
+  <!--1..stop修饰符，作用与e.stopPropagation()相同，阻止事件冒泡-->
+  <div style="width:200px;height:100px;border:1px solid darkgray;" @click="divClickHandler">
+    <button @click.stop="btn1ClickHandler">按钮1</button>
+  </div>
+  <hr>
+  <!--2..prevent修饰符，作用与e.preventDefault()相同，阻止默认事件-->
+  <form action="/User/Post">
+    <div style="width:200px;height:100px;border:1px solid darkorange">
+      <input type="submit" @click.prevent="submitHandler"></input>
+    </div>
+  </form>
+  <hr>
+  <!--3..按键(enter)修饰符，只有指定的按键才会触发事件-->
+  <input type="text" @keyup.enter="keyUpHandler">
+  <hr>
+  <!--4..once修饰符，绑定的事件只执行一次-->
+  <button @click.once="btn2ClickHandler">按钮2</button>
+</div>
+
+<script src="../js/vue.js"></script>
+<script>
+  const app=new Vue({
+    el:'#app',
+    data:{
+      message:'你好啊'
+    },
+    methods:{
+      divClickHandler(){
+        console.log('div被点击');
+      },
+      btn1ClickHandler(){
+        console.log('按钮1被点击');
+      },
+      submitHandler(){
+        console.log('提交表单');
+      },
+      keyUpHandler(){
+        console.log('enter按键弹起才执行');
+      },
+      btn2ClickHandler(){
+        console.log('按钮2被点击');
+      }
+    }
+  });
+</script>
+</body>
+</html>
