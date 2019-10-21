@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <!--vue虚拟dom会复用已经存在的元素-->
+
+    <!--出于性能考虑，在渲染dom到浏览器时，虚拟dom(virtual dom)会检查-->
+    <!--是否虚拟dom中已经存在要渲染的标签（label、input等）-->
+    <!--若存在，则直接用要渲染的元素的属性替换已存在的标签的属性（for、type、placeholder），但是用户输入的数据不会替换-->
+    <!--若不存在，则把要渲染的元素加入到虚拟dom中-->
+    <!--所以切换之后，input中已经输入的文字会被保留，而不是被清空-->
+    <!--若要渲染时用虚拟dom重新生成新的input，而不是继续用之前已有的input，可以给不同的input指定不同的key-->
+    <div v-if="isUser">
+        <label for="username">用户账号</label>
+        <input type="text" id="username" placeholder="用户账号" key="username">
+    </div>
+    <div v-else>
+        <label for="email">邮箱</label>
+        <input type="text" id="email" placeholder="邮箱" key="email">
+    </div>
+    <button @click="isUser=!isUser">切换</button>
+</div>
+
+<script src="../js/vue.js"></script>
+<script>
+  const app=new Vue({
+    el:'#app',
+    data:{
+      isUser:true
+    }
+  });
+</script>
+</body>
+</html>

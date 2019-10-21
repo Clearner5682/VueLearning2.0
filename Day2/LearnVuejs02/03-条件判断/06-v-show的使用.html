@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <!--v-if的值切换时，vue会创建、移除使用了v-if指令的元素-->
+    <h2 v-if="isShow">{{message}}</h2>
+    <!--v-show的值切换时，vue会修改使用了v-show指令的元素的display样式-->
+    <!--元素频繁的显示与隐藏时，使用v-show会性能比较好-->
+    <h2 v-show="isShow">{{message}}</h2>
+</div>
+
+<script src="../js/vue.js"></script>
+<script>
+  const app=new Vue({
+    el:'#app',
+    data:{
+      message:'你好啊',
+      isShow:true
+    }
+  });
+</script>
+</body>
+</html>
