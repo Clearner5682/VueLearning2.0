@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<div id="app">
+  <p>在索引遍历过程中没有使用下标值</p>
+  <ul>
+    <li v-for="name in names">{{name}}</li>
+  </ul>
+  <hr>
+  <p>在索引遍历过程中使用了下标值</p>
+  <ul>
+    <li v-for="(name,index) in names">{{index+1}}-{{name}}</li>
+  </ul>
+</div>
+
+<script src="../js/vue.js"></script>
+<script>
+  const app=new Vue({
+    el:'#app',
+    data:{
+      names:['hongyan','liyang','liweicai','wulinhao']
+    }
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<div id="app">
+  <p>没有key时，如果向数组中插入元素，则重新渲染时效率很低</p>
+  <ul>
+    <li v-for="letter in letters">{{letter}}</li>
+  </ul>
+  <hr>
+  <p>有key时，如果向数组中插入元素，则重新渲染时效率比较高</p>
+  <ul>
+    <li v-for="letter in letters" :key="letter">{{letter}}</li>
+  </ul>
+</div>
+
+<script src="../js/vue.js"></script>
+<script>
+  const app=new Vue({
+    el:'#app',
+    data:{
+      letters:['A','B','C','D','E']
+    }
+  });
+</script>
+</body>
+</html>
