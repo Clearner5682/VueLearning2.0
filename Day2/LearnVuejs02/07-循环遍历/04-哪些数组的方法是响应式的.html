@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<div id="app">
+  <ul>
+    <li v-for="(letter,index) in letters">{{index}}.{{letter}}</li>
+  </ul>
+  <hr>
+  <label for="operateType">操作类型:</label>
+  <select name="operateType" id="operateType" :style="{width:selectWidth+'px'}" v-model="selectedOperateType">
+    <option v-for="item in operateType" :value="item.value">{{item.name}}</option>
+  </select>
+  <button @click="btnClickHandler">Test</button>
+  <!--直接通过索引修改数组元素的值不是响应式的，界面不会改变-->
+  <!--1.可以通过splice函数替换元素-->
+  <!--2.通过Vue的set方法,Vue.set(letters,0,'TTTTTT')-->
+  <button @click="letters[0]='TTTTTT'">通过索引修改数组</button>
+  <button @click="setMethod">Vue的set方法修改</button>
+</div>
+
+<script src="../js/vue.js"></script>
+<script>
+  const app=new Vue({
+    el:'#app',
+    data:{
+      letters:['A','B','C','D','E'],
+      operateType: [
+        {name: 'push', value: 'push'},
+        {name: 'pop', value: 'pop'},
+        {name: 'splice', value: 'splice'},
+        {name: 'unshift', value: 'unshift'},
+        {name: 'shift', value: 'shift'},
+        {name:'sort',value:'sort'},
+        {name:'reverse',value:'reverse'}
+      ],
+      selectedOperateType:'',
+      selectWidth:100
+    },
+    created(){
+      this.selectedOperateType=this.operateType[0].value;
+    },
+    methods:{
+      btnClickHandler(){
+        switch(this.selectedOperateType){
+          case "push"://在数组的末尾追加n个元素，push是响应式的，能直接改变界面
+            this.letters.push('aaa','bbb');
+            break;
+          case "pop"://移除数组末尾的1个元素，pop是响应式的，能直接改变界面
+            this.letters.pop();
+            break;
+          case "unshift"://在数组的开头插入n个元素，unshift是响应式的，能直接改变界面
+            this.letters.unshift('sss','ttt');
+            break;
+          case "shift"://移除数组开头的1个元素，shift是响应式的，直接改变界面
+            this.letters.shift();
+            break;
+          case "splice"://从startIndex位置移除n个元素（n为0表示不移除）,并从startIndex位置插入x个元素（x为可变长度）
+              //splice函数功能很强大，可以用来做删除、插入、替换（把旧的删除，再插入新的）
+              //如果只传了startIndex则会删除startIndex之后的所有元素
+            this.letters.splice(2,1,"mmm","nnn","ooo")
+            break;
+          case "sort"://用于对数组进行排序
+            this.letters.sort();
+            break;
+          case "reverse"://对数组进行反转（反序）
+            this.letters.reverse();
+            break;
+        }
+      },
+      setMethod(){
+        Vue.set(this.letters,0,'sfasdfasdfas');
+      }
+    }
+  });
+
+  //...表示参数的个数是可变的，可以传1-n个参数
+  function TestFunc(...arg){
+    //console.log(arg);
+    for(let i=0;i<arg.length;i++){
+      console.log(arg[i]);
+    }
+  }
+
+  TestFunc(1);
+  TestFunc(5,12,123,100);
+</script>
+</body>
+</html>
