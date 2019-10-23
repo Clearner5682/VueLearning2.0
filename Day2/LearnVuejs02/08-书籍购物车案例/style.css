@@ -1,0 +1,45 @@
+table {
+    /*width:500px;*/
+    /*height:200px;*/
+    border:1px solid #ee55ff;
+    border-collapse: collapse;
+}
+
+thead tr{
+    height:31px;
+}
+
+tr td{
+    text-align: center;
+    border:1px solid #ee55ff;
+}
+
+th#rowIndex{
+    width:50px;
+    border:1px solid #ee55ff;
+}
+
+th#bookName{
+    width:200px;
+    border:1px solid #ee55ff;
+}
+
+th#releaseDate{
+    width:100px;
+    border:1px solid #ee55ff;
+}
+
+th#price{
+    width:100px;
+    border:1px solid #ee55ff;
+}
+
+th#amount{
+    width:100px;
+    border:1px solid #ee55ff;
+}
+
+th#operate{
+    width:100px;
+    border:1px solid #ee55ff;
+}
