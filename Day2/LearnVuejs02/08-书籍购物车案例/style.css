@@ -1,12 +1,19 @@
+/*div#container{*/
+/*    position: absolute;*/
+/*    top:30%;*/
+/*    left:50%;*/
+/*    transform: translate(-50%,-30%);*/
+/*}*/
 table {
     /*width:500px;*/
     /*height:200px;*/
-    border:1px solid #ee55ff;
+    /*border:1px solid #ee55ff;*/
     border-collapse: collapse;
 }
 
 thead tr{
-    height:31px;
+    height:40px;
+    background-color: lightgray;
 }
 
 tr td{
@@ -15,31 +22,36 @@ tr td{
 }
 
 th#rowIndex{
-    width:50px;
+    width:80px;
     border:1px solid #ee55ff;
 }
 
-th#bookName{
-    width:200px;
+thead tr th#bookName{
+    width:300px;
     border:1px solid #ee55ff;
 }
 
-th#releaseDate{
+thead tr th#releaseDate{
+    width:150px;
+    border:1px solid #ee55ff;
+}
+
+thead tr th#price{
+    width:150px;
+    border:1px solid #ee55ff;
+}
+
+thead tr th#amount{
+    width:150px;
+    border:1px solid #ee55ff;
+}
+
+thead tr th#operate{
     width:100px;
     border:1px solid #ee55ff;
 }
 
-th#price{
-    width:100px;
-    border:1px solid #ee55ff;
-}
-
-th#amount{
-    width:100px;
-    border:1px solid #ee55ff;
-}
-
-th#operate{
-    width:100px;
-    border:1px solid #ee55ff;
+button:disabled{
+    border:1px solid;
+    background-color:lightgray;
 }

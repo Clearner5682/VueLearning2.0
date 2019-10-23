@@ -1,30 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <div id="app">
-    <table>
-        <thead>
-        <th id="rowIndex">序号</th>
-        <th id="bookName">书籍名称</th>
-        <th id="releaseDate">出版日期</th>
-        <th id="price">价格</th>
-        <th id="amount">购买数量</th>
-        <th id="operate">操作</th>
-        </thead>
-        <tr v-for="(book,index) in books">
-            <td>{{index}}</td>
-            <td>{{book.bookName}}</td>
-            <td>{{book.releaseDate}}</td>
-            <td>{{book.price}}</td>
-            <td>{{book.amount}}</td>
-            <td><button @click="removeBook(index)">移除</button></td>
-        </tr>
-    </table>
+    <div id="container" v-if="books.length>0">
+        <table>
+            <thead>
+            <tr>
+            <th id="rowIndex">序号</th>
+            <th id="bookName">书籍名称</th>
+            <th id="releaseDate">出版日期</th>
+            <th id="price">价格</th>
+            <th id="amount">购买数量</th>
+            <th id="operate">操作</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr v-for="(book,index) in books">
+                <td>{{index}}</td>
+                <td>{{book.bookName}}</td>
+                <td>{{book.releaseDate}}</td>
+                <!--使用方法来格式化价格-->
+                <!--<td>{{formatPrice(book.price)}}</td>-->
+                <!--使用过滤器来格式化价格-->
+                <td>{{book.price|formatPrice}}</td>
+                <td>
+                    <button @click="increment(index)">+</button>&nbsp;{{book.amount}}&nbsp;<button :disabled="books[index].amount<=1" @click="decrement(index)">-
+                </button>
+                </td>
+                <td>
+                    <button @click="removeBook(index)">移除</button>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+        <div id="total">总价：{{total|formatPrice}}</div>
+    </div>
+    <h2 v-else>购物车为空</h2>
 </div>
 
 
@@ -32,21 +48,6 @@
 <script src="main.js"></script>
 
 
-<script>
-    const app=new Vue({
-      el:'#app',
-      data:{
-        books:[
-          {bookName:'算法导论',releaseDate:'2010-09-01',price:50,amount:1},
-          {bookName: 'C语言程序设计',releaseDate: '1998-01-25',price:80,amount:1}
-        ]
-      },
-      methods:{
-        removeBook(index){
-          this.books.splice(index,1);
-        }
-      }
-    });
-</script>
+
 </body>
 </html>
