@@ -18,11 +18,13 @@ const app = new Vue({
       //   total+=this.books[i].price*this.books[i].amount;
       // }
 
-      for(let book of this.books){
-        total+=book.price*book.amount;
-      }
+      // for(let book of this.books){
+      //   total+=book.price*book.amount;
+      // }
+      //
+      // return total;
 
-      return total;
+      return this.books.reduce((preValue,curValue)=>preValue+curValue.amount*curValue.price,0);
     }
   },
   methods: {

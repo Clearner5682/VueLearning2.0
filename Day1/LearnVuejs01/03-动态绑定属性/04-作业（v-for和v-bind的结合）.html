@@ -12,7 +12,8 @@
 <body>
 <div id="app">
   <ul>
-    <li v-for="(movie,index) in movies" v-bind:class="{active:index===currentIndex}" v-on:click="liClickHandler(index)">{{index}}-{{movie}}</li>
+    <li v-for="(movie,index) in movies" v-bind:class="getClass1(index)" v-on:click="liClickHandler(index)">{{index}}-{{movie}}</li>
+<!--    <li v-for="(movie,index) in movies" v-bind:class="getClass2(index)" v-on:click="liClickHandler(index)">{{index}}-{{movie}}</li>-->
   </ul>
 </div>
 
@@ -30,7 +31,21 @@
       liClickHandler:function(index){
         this.currentIndex=index;
       },
-      // getClass:function(index){
+      // 正确的做法，不会导致死循环
+      getClass1:function(index){
+        if(index==this.currentIndex){
+          this.isActive=true;
+        }
+        else{
+          this.isActive=false;
+        }
+
+        return {active:this.currentIndex==index}
+      },
+      // 错误的写法，会导致死循环，因为所有li的class直接绑定了同一个isActive属性。
+      // 执行getClass2方法时直接修改了isActive（li的class），由于vue是响应式的，此时界面重新渲染（绑定class）。
+      // 绑定class会再次执行getClass2方法，此时又修改了isActive，会导致界面重新渲染（绑定class），就会一直这样死循环下去
+      // getClass2:function(index){
       //   if(index==this.currentIndex){
       //     this.isActive=true;
       //   }
@@ -38,7 +53,7 @@
       //     this.isActive=false;
       //   }
       //
-      //   return {active:this.isActive}
+      //   return {active:this.isActive};
       // }
     }
   });
