@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<div id="app">
+<!--  checkbox单选框-->
+<!--  使用label for的好处是点击label也会选中checkbox-->
+  <label for="isAgree">
+    <input type="checkbox" id="isAgree" v-model="isAgree">是否开启
+  </label>
+  <h2>您选择了：{{isAgree}}</h2>
+  <button :disabled="!isAgree">下一步</button>
+  <hr>
+<!--  checkbox静态多选框-->
+  <label for="chk1"><input type="checkbox" id="chk1" value="篮球" v-model="sports">篮球</label>
+  <label for="chk2"><input type="checkbox" id="chk2" value="足球" v-model="sports">足球</label>
+  <label for="chk3"><input type="checkbox" id="chk3" value="羽毛球" v-model="sports">羽毛球</label>
+  <label for="chk4"><input type="checkbox" id="chk4" value="乒乓球" v-model="sports">乒乓球</label>
+  <h2>您选择了：{{sports}}</h2>
+  <hr>
+<!--  checkbox动态多选框-->
+  <label v-for="terminal in allTerminals" :for="'terminal'+terminal.id">
+    <input type="checkbox" :id="'terminal'+terminal.id" :value="terminal.id" v-model="selectedTerminalIds">
+    {{terminal.name}}
+  </label>
+  <h2>您选择了：{{selectedTerminalIds}}</h2>
+</div>
+
+<script src="../js/vue.js"></script>
+<script>
+  const app=new Vue({
+    el:'#app',
+    data:{
+      isAgree:false,
+      sports:['篮球','足球','羽毛球','乒乓球'],
+      allTerminals:[
+        {
+          id:1,
+          name:'终端1'
+        },
+        {
+          id:2,
+          name:'终端2'
+        },
+        {
+          id:3,
+          name:'终端3'
+        },
+        {
+          id:4,
+          name:'终端4'
+        }
+      ],
+      selectedTerminalIds:[1,4]
+    }
+  });
+</script>
+</body>
+</html>

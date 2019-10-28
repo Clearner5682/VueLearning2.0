@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<div id="app">
+  <!--  select单选（model为字符串）-->
+  <label for="fruits1">
+    水果：
+  <select name="fruits1" id="fruits1" v-model="fruit">
+    <option value="苹果">苹果</option>
+    <option value="梨子">梨子</option>
+    <option value="香蕉">香蕉</option>
+    <option value="橘子">橘子</option>
+  </select>
+  </label>
+  <h2>您选择了：{{fruit}}</h2>
+  <hr>
+<!--  select多选（model为数组）-->
+  <label for="fruits2">
+    水果：
+    <select name="fruits2" id="fruits2" multiple="multiple" v-model="fruits">
+      <option value="苹果">苹果</option>
+      <option value="梨子">梨子</option>
+      <option value="香蕉">香蕉</option>
+      <option value="橘子">橘子</option>
+    </select>
+  </label>
+  <h2>您选择了：{{fruits}}</h2>
+</div>
+
+<script src="../js/vue.js"></script>
+<script>
+  const app = new Vue({
+    el: '#app',
+    data: {
+      fruit: '香蕉',
+      fruits:['苹果','梨子','香蕉','橘子']
+    }
+  });
+</script>
+</body>
+</html>

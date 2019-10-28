@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+<!--    vue会根据不同的标签类型（text、radio、select）自动选取正确的方法来更新元素-->
+<!--    v-model本质上是语法糖，它负责监听用户的输入事件以更新数据（双向绑定）-->
+<!--    1、text元素使用value属性和input事件-->
+<!--    2、checkbox和radio使用checked属性和change事件-->
+<!--    3、select使用value属性和change事件-->
+<!--    同一个name的radio是互斥的-->
+<!--    同一个v-model的radio也是互斥的，使用了v-model之后可以去掉name-->
+    <label for="male">
+        <input type="radio" id="male" value="男" v-model="sex">男
+    </label>
+    <label for="female">
+        <input type="radio" id="female" value="女" v-model="sex">女
+    </label>
+    <h2>{{sex}}</h2>
+</div>
+
+<script src="../js/vue.js"></script>
+<script>
+  const app=new Vue({
+    el:'#app',
+    data:{
+      message:'你好啊',
+      sex:''
+    }
+  });
+</script>
+</body>
+</html>
