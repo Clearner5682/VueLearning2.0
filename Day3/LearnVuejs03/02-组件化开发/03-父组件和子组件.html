@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<div id="app">
+  <cpn2></cpn2>
+</div>
+
+<script src="../js/vue.js"></script>
+<script>
+  // 创建第一个组件(子组件)
+  const cpn1=Vue.extend({
+    template:`<div>
+<h2>这是标题1</h2>
+<p>这是内容，哈哈哈哈</p>
+</div>`
+  });
+
+  // 创建第二个组件(父组件)
+  const cpn2=Vue.extend({
+    template: `
+    <div>
+    <h2>这是标题2</h2>
+    <p>这是内容，呵呵呵呵</p>
+    <cpn1></cpn1>
+    </div>
+    <cpn1></cpn1>
+<!--    cpn1放到这里会报错？？？
+因为template只能有一个根对象，也就是子组件必须放到div这个根对象里面，否则报错
+ <cpn1></cpn1>-->
+    `,
+    components: {
+      cpn1:cpn1
+    }
+  });
+
+
+  // 根组件
+  const app=new Vue({
+    el:'#app',
+    data:{
+      message:'你好啊'
+    },
+    components:{
+      cpn2:cpn2
+    }
+  });
+</script>
+</body>
+</html>
