@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style type="text/css">
+    .calculator{
+      border:1px solid #ee55ff;
+      padding: 10px;
+      width:150px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+<div id="app">
+  <cpn></cpn>
+  <hr>
+  <cpn></cpn>
+  <hr>
+  <cpn></cpn>
+</div>
+<template id="cpn">
+<!--  模板只能有一个root元素，因此要放到一个div中-->
+  <div class="calculator">
+    <h2>{{name}}</h2>
+    <h2>{{counter}}</h2>
+    <button @click="increment()">+</button>
+    <button @click="decrement()">-</button>
+  </div>
+</template>
+
+<script src="../js/vue.js"></script>
+<script>
+  // 若返回的是同一个对象，则修改任意一个组件，其他组件也会随着改变
+  // 这就是组件的data必须是函数的原因（每次返回新的对象），各个组件的实例之间是隔离的
+  // 组件实例是怎么实现双向绑定的，每个组件实例是如何保存自己的数据的？？？
+  // 后续课程要弄清楚
+  // const obj={
+  //   name:'test',
+  //   counter:0
+  // }
+  Vue.component('cpn',{
+    template:'#cpn',
+    data:function(){
+      return {
+        name:'计数器',
+        counter:0
+      }
+      // return obj;
+    },
+    methods:{
+      increment(){
+        this.counter++;
+      },
+      decrement(){
+        this.counter--;
+      }
+    }
+  });
+
+  const app=new Vue({
+    el:'#app',
+    data:{
+      message:'你好啊'
+    }
+  });
+</script>
+<script>
+  function Test(){
+    return {
+      name:'why',
+      age:18
+    }
+  }
+
+  let obj1=Test();
+  let obj2=Test();
+  obj1.name='kobe';
+  // 输出{name:'kobe',age:18}
+  console.log(obj1);
+  // 输出{name:'why',age:18}
+  console.log(obj2);
+  // 输出的对象不一样，说明Test()返回的是不同对象，用这个方法可以判断两个对象是否是同一个对象（同一个地址）
+  // 若是同一个对象，则修改其中一个的属性之后，另一个也要改变
+</script>
+</body>
+</html>
