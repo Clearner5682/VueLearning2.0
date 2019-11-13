@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<div id="app">
+<!--  这里不能使用驼峰标识-->
+<!--  使用v-on监听事件，与v-on:click类似，只是这里监听的是自定义的事件-->
+  <cpn @cpnclick="cpnClickHandler"></cpn>
+<!--  <cpn @cpn-click="cpnClickHandler"></cpn>-->
+</div>
+
+<template id="cpn">
+  <div>
+    <ul>
+      <li v-for="item in categories">
+        <a href="#" @click="categoryClick(item)">{{item.name}}</a>
+      </li>
+    </ul>
+  </div>
+</template>
+
+<script src="../js/vue.js"></script>
+<script>
+  const cpn={
+    template:'#cpn',
+    data(){
+      return {
+        categories:[
+          {id:'1111',name:'日常用品'},
+          {id:'2222',name:'潮流衣裤'},
+          {id:'3333',name:'家用电器'},
+          {id:'4444',name:'数码3C'}
+        ]
+      }
+    },
+    methods:{
+      categoryClick(category){
+        // 很重要：这里子组件发射出一个事件（自定义事件），与鼠标点击、按键按下等系统事件类似
+        // 鼠标点击、按键按下等事件由window产生，会自动带上事件参数$event
+        // 自定义事件由子组件发射，会自动带上需要传递的参数，没有$event
+        // 父组件使用v-on能监听到自定义事件（与系统事件监听一样）
+        // 事件名称不能使用驼峰标识cpnClick,也不能使用cpn-Click，应该使用cpn-click或cpnclick
+        this.$emit('cpnclick',category);
+        // this.$emit('cpn-click',category);
+      }
+    }
+  }
+
+
+  const app=new Vue({
+    el:'#app',
+    data:{
+      message:'你好啊'
+    },
+    components:{
+      cpn
+    },
+    methods:{
+      cpnClickHandler(catetory){
+        console.log(catetory);
+        console.log("id:"+catetory.id+",name:"+catetory.name);
+      }
+    }
+  });
+</script>
+</body>
+</html>
