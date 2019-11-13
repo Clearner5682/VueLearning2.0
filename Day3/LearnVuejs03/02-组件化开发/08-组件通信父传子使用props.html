@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+<!--    这里必须使用v-bind，否则会直接把message和movies当做字符串处理（参考v-bind的基本使用）-->
+    <cpn :cmessage="message" :cmovies="movies"></cpn>
+</div>
+
+<template id="myTemplate">
+    <div>
+        <h2>{{cmessage}}</h2>
+        <ul>
+            <li v-for="item in cmovies">{{item}}</li>
+        </ul>
+    </div>
+</template>
+
+<script src="../js/vue.js"></script>
+<script>
+  const cpn={
+    template:'#myTemplate',
+    // props为数组，不常用
+    // props:['cmessage','cmovies']
+
+
+    // props为对象，常用
+    // props:{
+    //   cmessage:String,
+    //   cmovies:[Array,String],
+    // }
+
+
+    // 设置类型、默认值、验证
+    props:{
+      cmessage:{
+        type:String,
+        default:'defaultMessage',
+        required:true,
+        // 自定义的验证方法，返回false时会出现警告
+        validator:function(value){
+          console.log('执行验证方法，值为：'+value);
+
+          if(value==null){
+            return false;
+          }
+
+          return value.length>3;
+        }
+      },
+      cmovies:{
+        type:Array,
+        default(){
+          return [];
+        }
+      }
+    }
+
+
+  }
+
+
+  const app=new Vue({
+    el:'#app',
+    data:{
+      message:'你好啊，Coderhy',
+      movies:['海王','海贼王','海尔兄弟']
+    },
+    components:{
+      cpn
+    }
+  });
+</script>
+</body>
+</html>
