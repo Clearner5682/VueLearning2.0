@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<div id="app">
+<!--  注意这里的注册的事件名称不能使用camel写法，必须写成mm-nnn这种形式（用-分隔）-->
+<!--  参数会自动传递到methods中，这里不需要写形参-->
+  <cpn :cnum1="num1" :cnum2="num2" @num1-changed="num1ChangedHandler"></cpn>
+</div>
+
+<template id="cpn">
+  <div>
+    <h2>data:{{dnum1}}</h2>
+    <h2>props:{{cnum1}}</h2>
+<!--    这里只能双向绑定（v-model或value+事件监听）只能对应data()或computed，不能直接使用props，否则会被vue实例中的data覆盖（修改app.data会直接改变props）-->
+    <input type="text" :value="dnum1" @input="num1InputHandler" />
+  </div>
+</template>
+
+<script src="../js/vue.js"></script>
+<script>
+  const app=new Vue({
+    el:'#app',
+    data:{
+      num1:1,
+      num2:0
+    },
+    methods:{
+      num1ChangedHandler(value){
+        this.num1=value;
+      }
+    },
+    components:{
+      'cpn':{
+        template:'#cpn',
+        props:{
+          cnum1:Number,
+          cnum2:Number
+        },
+        data(){
+          return {
+            dnum1:this.cnum1,
+            dnum2:this.cnum2
+          }
+        },
+        methods:{
+          num1InputHandler(event){
+            console.log(event.target.value);
+            this.dnum1=parseFloat(event.target.value);
+            this.$emit('num1-changed',this.dnum1);
+          }
+        }
+      }
+    }
+  });
+</script>
+</body>
+</html>
