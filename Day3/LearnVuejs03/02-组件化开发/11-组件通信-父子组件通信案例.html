@@ -37,10 +37,17 @@
     components:{
       'cpn':{
         template:'#cpn',
+        // 子组件中props的数据都是父组件(vue实例)传过来的
+        // 子组件中props的数据是只读的，不能修改，否则会提示错误"props中的数据会被父组件的数据重写"
+        // 只要父组件中的数据变了，props的数据会跟着改变，因此num1InputHandler中没有直接修改cnum1（直接修改会报错）
+        // 而是发出一个自定义事件，在自定义事件中修改父组件的data，此时子组件中的props会跟着改变
         props:{
           cnum1:Number,
           cnum2:Number
         },
+        // 子组件中的data数据是子组件私有的，可读可写的
+        // 子组件中的data使用了props中的cnum1和cnum2，但是cnum1和cnum2只是用来初始化data(提供初始值)
+        // 当props中的数据改变时，并不会引起data的改变
         data(){
           return {
             dnum1:this.cnum1,
