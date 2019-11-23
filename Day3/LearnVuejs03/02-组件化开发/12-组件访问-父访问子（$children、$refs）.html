@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<div id="app">
+<!--  子组件需要设置ref特性，才能在$refs中访问-->
+  <cpn1 ref="cpn1"></cpn1>
+  <cpn2 ref="cpn2"></cpn2>
+  <button @click="test1ClickHandler">test1</button>
+  <button @click="test2ClickHandler">test2</button>
+</div>
+
+<template id="cpn1">
+  <div>
+    <h2>cpn1</h2>
+  </div>
+</template>
+
+<template id="cpn2">
+  <div>
+    <h2>cpn2</h2>
+  </div>
+</template>
+
+<script src="../js/vue.js"></script>
+<script>
+  const app=new Vue({
+    el:'#app',
+    data:{
+      message:'你好啊'
+    },
+    methods:{
+      // 使用$children访问子组件
+      test1ClickHandler(){
+        console.log(this.$children[1]);
+        console.log(this.$children[1].message);
+        console.log(this.$children[1].showMessage());
+      },
+      // 使用$refs访问子组件，子组件需要设置ref特性
+      test2ClickHandler(){
+        // console.log(this.$refs.cpn1);
+        // console.log(this.$refs.cpn1.message);
+        // console.log(this.$refs.cpn1.showMessage());
+        console.log(this.$refs["cpn1"]);
+        console.log(this.$refs["cpn1"].message);
+        console.log(this.$refs["cpn1"].showMessage());
+      }
+    },
+    components:{
+      cpn1:{
+        template:'#cpn1',
+        data(){
+          return{
+            message:'我是组件1'
+          }
+        },
+        methods:{
+          showMessage(){
+            return this.message;
+          }
+        }
+      },
+      cpn2:{
+        template:'#cpn2',
+        data(){
+          return {
+            message:'我是cpn2'
+          }
+        },
+        methods:{
+          showMessage(){
+            return this.message;
+          }
+        }
+      }
+    }
+  });
+</script>
+</body>
+</html>
