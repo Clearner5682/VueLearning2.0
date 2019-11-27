@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<div id="app">
+  <cpn><button>这是一个按钮</button></cpn>
+  <cpn><a href="#">这是一个a标签</a></cpn>
+<!--  插槽内的数据来自于vue实例的数据-->
+  <cpn><span :style="{border:spanBorder}">这是一个span标签</span></cpn>
+  <cpn>
+<!--    如果有多个元素，则多个元素会被一起放到插槽内-->
+    <div>这是一个div</div>
+    <spn>这是一个span</spn>
+  </cpn>
+<!--  当没有指定要放到插槽中的元素时，会使用默认元素-->
+  <cpn></cpn>
+  <cpn></cpn>
+</div>
+
+<template id="cpn">
+  <div>
+    <h2>cpn组件</h2>
+    <!--  这里定义一个插槽，其内容根据使用时传入的内容而定-->
+    <!--  类似于USB接口，插入不同的设备就有不同的功能-->
+    <!--  一般把组件中有差异的内容放到插槽中-->
+    <slot><button>插槽默认内容</button></slot>
+  </div>
+</template>
+
+<script src="../js/vue.js"></script>
+<script>
+  const app=new Vue({
+    el:'#app',
+    data:{
+      message:'你好啊',
+      spanBorder:'1px solid red'
+    },
+    components:{
+      'cpn':{
+        template:'#cpn',
+        data(){
+          return{
+          }
+        }
+      }
+    }
+  });
+</script>
+</body>
+</html>
