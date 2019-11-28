@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<div id="app">
+<!--  1.这里的isShow使用的是vue实例中的属性-->
+<!--  2.cpn在这里与div、li、a这些标签的使用相同，只是编译到cpn时会找子组件对应的模板然后替换这里的内容-->
+<!--  3.<div id='cpn'>是vue实例的模板，因此这里是属于vue实例的作用域，只能使用vue实例的属性-->
+  <cpn v-show="isShow"></cpn>
+</div>
+
+<template id="cpn">
+  <div>
+    <h2>我是子组件</h2>
+    <p>我是内容</p>
+<!--    1.这里是cpn组件的模板，因此这里是属于vue组件的作用域，只能使用vue组件的属性-->
+<!--    2.这里的isShow使用的是组件的isShow-->
+    <button v-show="isShow">按钮</button>
+  </div>
+</template>
+<script src="../js/vue.js"></script>
+<script>
+  const app=new Vue({
+    el:'#app',
+    data:{
+      message:'你好啊',
+      isShow:true
+    },
+    components:{
+      'cpn':{
+        template:'#cpn',
+        data(){
+          return{
+            isShow:false
+          }
+        }
+      }
+    }
+  });
+</script>
+</body>
+</html>

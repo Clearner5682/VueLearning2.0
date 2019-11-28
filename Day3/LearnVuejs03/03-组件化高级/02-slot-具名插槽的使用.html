@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<div id="app">
+  <cpn>
+    <button slot="left">左边</button>
+    <a href="#" slot="center">中间</a>
+    <p slot="right">右边</p>
+    <h2>哈哈哈哈</h2>
+    <h2>呵呵呵呵</h2>
+  </cpn>
+</div>
+
+<template id="cpn">
+  <div>
+<!--    1.具名插槽就是指有名字的插槽-->
+<!--    2.在添加的元素中使用slot属性指定要替换的插槽-->
+<!--    3.若添加的元素没有指定slot属性，则每个没有名字的插槽都会被替换成添加的元素-->
+    <slot name="left"><span>左边插槽</span></slot>
+    <slot name="center"><span>中间插槽</span></slot>
+    <slot name="right"><span>右边插槽</span></slot>
+    <slot>没有名字的插槽</slot>
+    <slot>test</slot>
+  </div>
+</template>
+
+<script src="../js/vue.js"></script>
+<script>
+  const app=new Vue({
+    el:'#app',
+    data:{
+      message:'你好啊'
+    },
+    components:{
+      'cpn':{
+        template:'#cpn'
+      }
+    }
+  });
+</script>
+</body>
+</html>
