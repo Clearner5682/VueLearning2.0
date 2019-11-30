@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<!--1.场景是小明负责aaa.js和bbb.js模块的开发，小红负责bbb.js的开发-->
+<!--2.如果小明和小红使用了名称相同的全局变量，则可能因为变量冲突导致结果有问题-->
+<!--3.为了避免这种问题，js文件的引用顺序一定要正确-->
+<!--4.使用匿名函数闭包可以解决变量冲突的问题，将要给其他模块复用的属性、方法等通过匿名函数的返回参数传出-->
+<!--5.匿名函数闭包能实现模块化-->
+<script src="aaa.js"></script>
+<script src="bbb.js"></script>
+<script src="mmm.js"></script>
+</body>
+</html>

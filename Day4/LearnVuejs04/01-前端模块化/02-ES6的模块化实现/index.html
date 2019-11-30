@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<!--1.加上了type="module"之后每个js文件都有自己的作用域，每个js文件不能访问别的js的属性、函数-->
+<!--2.想要其他js文件也能访问自己的属性、函数，可以通过export{}将属性、函数导出-->
+<!--3.想要访问其他js的属性、函数，可以通过import{}将属性、函数导入-->
+<!--4.import和export的对象必须使用字面量的增强写法-->
+<script src="aaa.js" type="module"></script>
+<script src="bbb.js" type="module"></script>
+<script src="mmm.js" type="module"></script>
+</body>
+</html>
