@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script src="./node_modules/jquery/dist/jquery.js"></script>
+
+<!--1.npm init --yes：npm初始化，会在所在的目录生成一个package.json文件，里面包括了包的名称、版本号、依赖、开发时依赖-->
+<!--2.要使用哪个包就直接使用npm install xxx@version(xxx表示包的名称，可以从bootcdn查到，比如jquery。@version表示包的版本号，@latest表示最新版@3.3.0表示3.3.0版本)-->
+<!--3.要删除哪个包就直接使用npm uninstall xxx-->
+<!--4.要升级或降级哪个包，就直接使用npm install xxx @version，会移除现在包然后安装指定版本的包-->
+<!--5.devDependencies表示开发时依赖，比如webpack打包工具，只有开发阶段打包时才用到-->
+<script>
+    $(function(){
+      console.log('hello npm');
+    })
+</script>
+</body>
+</html>
