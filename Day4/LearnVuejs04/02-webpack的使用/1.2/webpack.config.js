@@ -1,0 +1,15 @@
+module.exports={
+  entry:'./js/aaa.js',
+  output:{
+    filename:'aaa.bundle.js',
+    path:__dirname+'/dist'
+  },
+  module:{
+    rules:[
+      {
+        test:/\.css$/,
+        use:['style-loader','css-loader']
+      }
+    ]
+  }
+}
