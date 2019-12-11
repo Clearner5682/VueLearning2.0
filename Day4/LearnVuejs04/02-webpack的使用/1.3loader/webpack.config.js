@@ -45,7 +45,26 @@ module.exports={
             },
           }
         ]
+      },
+      {
+        test:/\.js$/,
+        exclude: /(node_modules|bower_components)/,
+        use:[
+          {
+            loader:'babel-loader',
+            options:{
+              presets: ['es2015']
+            }
+          }
+        ]
       }
     ]
+  },
+  resolve:{
+    alias:{
+      'vue$': 'vue/dist/vue.esm.js'
+      // 故意在根目录下添加了一个同名的vue.js，为了测试import from会加载哪个
+      // 'vue$': './vue.js'
+    }
   }
 }
