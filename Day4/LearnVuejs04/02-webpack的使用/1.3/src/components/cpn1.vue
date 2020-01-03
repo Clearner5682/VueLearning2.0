@@ -1,5 +1,5 @@
 <template>
-<div>
+<div id="container1">
 <h2>{{name}}</h2>
 </div>
 </template>
@@ -15,5 +15,10 @@ export default {
 </script>
 
 <style>
-
+div#container1 {
+    height: 200px;
+    background-image: url('../images/winter.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%
+}
 </style>
