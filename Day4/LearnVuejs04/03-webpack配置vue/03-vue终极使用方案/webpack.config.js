@@ -1,5 +1,6 @@
 const path = require('path');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   entry: './main.js',
@@ -29,6 +30,16 @@ module.exports = {
   },
   plugins: [
     // vue-loader在15.*之后的版本中都要使用VueLoaderPlugin
-    new VueLoaderPlugin()
+    new VueLoaderPlugin(),
+    new HtmlWebpackPlugin({
+      template:'./index.html'
+    })
   ],
+  devServer:{
+    host:'192.168.0.109',
+    port:9999,
+    open:true,
+    contentBase:'./dist/',
+    inline:true
+  }
 }
