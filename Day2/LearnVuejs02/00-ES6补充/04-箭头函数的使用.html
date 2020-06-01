@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1.最常用的函数写法
+        const func=function(){
+            console.log('执行func');
+        }
+        func();
+        // 2.字面量增强写法
+        const obj1={
+            aaa(){
+                console.log('执行aaa');
+            }
+        }
+        obj1.aaa();
+        // 3.使用箭头函数(lambda)
+        const createElement=function(element){
+            console.log(element);
+        }
+        const app={
+            template:'test app',
+            data(){
+                return 'test data'
+            }
+        }
+        const obj2={
+            add:(num1,num2)=>{
+                return num1+num2;
+            },
+            mul:(num1,num2)=>num1*num2,
+            // 箭头函数最常用的方式就是当方法参数是函数时，这样看上去比较简洁
+            render:h=>h(app)
+        }
+        console.log(obj2.add(10,20));
+        console.log(obj2.mul(10,20));
+        obj2.render(createElement);
+        // 4.箭头函数的this指向
+        const obj3={
+            aaa(){
+                setTimeout(function(){
+                    // this指window
+                    console.log(this);
+                },200);
+                setTimeout(()=>{
+                    // this指obj3
+                    // 结论：箭头函数中的this，是指最近作用域中的this，从里往外查找
+                    // 首先在箭头函数的作用域中没有找到this的定义，就会去aaa函数的作用域中去找，这里使用this就相当于obj3.this
+                    // 因此这里打印obj3对象
+                    console.log(this);
+                },200);
+            }
+        }
+        obj3.aaa();
+    </script>
+</body>
+</html>
