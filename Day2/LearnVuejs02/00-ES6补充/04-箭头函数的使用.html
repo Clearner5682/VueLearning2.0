@@ -43,17 +43,22 @@
         // 4.箭头函数的this指向
         const obj3={
             aaa(){
+                // 1.有调用者，则函数内部的this为调用者
+                this.test();
                 setTimeout(function(){
-                    // this指window
+                    // 2.普通函数，没有调用者
+                    // 在非严格模式（use strict）下，因为该函数没有具体的调用者,所以this指window
+                    // 在严格模式下，如果函数没有具体调用者，则this指undefined
                     console.log(this);
                 },200);
                 setTimeout(()=>{
-                    // this指obj3
-                    // 结论：箭头函数中的this，是指最近作用域中的this，从里往外查找
-                    // 首先在箭头函数的作用域中没有找到this的定义，就会去aaa函数的作用域中去找，这里使用this就相当于obj3.this
-                    // 因此这里打印obj3对象
+                    // 3.箭头函数，没有调用者
+                    // 因为箭头函数没有自己的this，在它内部使用this，则this指向定义该箭头函数的宿主对象(obj3)
                     console.log(this);
                 },200);
+            },
+            test(){
+                console.log(this);
             }
         }
         obj3.aaa();
