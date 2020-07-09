@@ -43,7 +43,7 @@
         // 4.箭头函数的this指向
         const obj3={
             aaa(){
-                // 1.有调用者，则函数内部的this为调用者
+                // 1.普通函数，有调用者，则函数内部的this为调用者
                 this.test();
                 setTimeout(function(){
                     // 2.普通函数，没有调用者
@@ -51,13 +51,20 @@
                     // 在严格模式下，如果函数没有具体调用者，则this指undefined
                     console.log(this);
                 },200);
+                // 3.箭头函数，有调用者，this指向window
+                // 到目前为止，箭头函数还不能直接作为对象的方法使用，没有谁这样用
+                // 箭头函数的使用场景一般是当函数的参数为函数时，比如回调函数，这种情况一般使用箭头函数
+                this.arror();
                 setTimeout(()=>{
-                    // 3.箭头函数，没有调用者
+                    // 4.箭头函数，没有调用者
                     // 因为箭头函数没有自己的this，在它内部使用this，则this指向定义该箭头函数的宿主对象(obj3)
                     console.log(this);
                 },200);
             },
             test(){
+                console.log(this);
+            },
+            arror:()=>{
                 console.log(this);
             }
         }
