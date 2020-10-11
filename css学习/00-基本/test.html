@@ -1,0 +1,37 @@
+<html>
+    <head>
+        <title>1.css基础知识</title>
+        <style>
+            /* 第三种引入CSS样式的方式，通过@import */
+            @import url('./common.css');
+            /* 第一种引入CSS样式的方式，内嵌样式的方式 */
+            p{
+                /* 如果加上!important则表示该规则是很重要的，它的优先级最高 */
+                /* 一般不用!important */
+                /* 如果有两个!important，则要看他们的顺序了 */
+                background-color: green;
+                border: 1px solid red;
+            }
+            div{
+                background-color: #415fff;
+            }
+        </style>
+        <!-- 第二种引入CSS样式的方式，通过引入外部样式表 -->
+        <!-- 对于外部样式表和内嵌样式的优先级要看他们的先后顺序 -->
+        <!-- 后面的会覆盖前面的样式，比如div的样式如果写在上面的style中，则会被test.css中的样式覆盖，如果写在下面的style中，则会覆盖test.css中的样式 -->
+        <link rel="stylesheet" href="./test.css">
+        <!-- <style>
+            div{
+                background-color: #415fff;
+            }
+        </style> -->
+    </head>
+    <body>
+        <div>
+            this is a div
+        </div>
+        <p class="big-p">asdjklfjdaskljfklasjklfjasklfjklasj</p>
+        <!-- 第四种引入CSS样式的方式，通过style属性，优先级是最高的，会覆盖class中的样式 -->
+        <p style="background-color: #415fff;">这是第二个段落，使用style属性引入样式，优先级是最高的</p>
+    </body>
+</html>

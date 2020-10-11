@@ -1,0 +1,50 @@
+/* 把p元素的第一个单词的大小设置为30px */
+p::first-letter{
+    font-size: 30px;
+}
+
+/* 把ID为first的p元素的第一个单词大小设置为40px */
+p#first::first-letter{
+    font-size: 40px;
+}
+
+/* 在类名为help的a标签的内容后加上? */
+a.help::after{
+    content: '?';
+}
+
+/* 在类名为htlp的a标签的内容前加上一个图标 */
+a.help::before{
+    content:'';
+      display:inline-block;
+      width:10px;
+      height:10px;
+      border-radius:10px;/**控制形状**/
+      background-color:#000;/**控制图标颜色**/
+     margin-right:10px/**图标与文字距离**/
+}
+
+/* 1.找到div元素下的所有p元素 */
+/* 2.指定第一个孩子元素的字体颜色为blue */
+div p:first-child{
+    color: blue;
+}
+
+/* 1.找到div元素下的所有p元素 */
+/* 2.指定最后一个孩子元素的字体颜色为red */
+div p:last-child{
+    color: red;
+}
+
+/* 1.找到div元素下的所有p元素 */
+/* 2.指定第二个孩子元素的字体颜色为green */
+/* 注意序号是从1开始，不是从0开始 */
+div p:nth-child(2){
+    color: green;
+}
+
+/* 指定偶数的元素的字体颜色为yellow */
+/* div p:nth-child(even){
+    color: yellow;
+} */
+

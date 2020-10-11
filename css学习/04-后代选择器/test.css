@@ -1,0 +1,42 @@
+div{
+    /* rgba中的a即alpha，表示不透明度 */
+    background-color: rgba(255, 0, 0, 0.2);
+    padding: 10px;
+}
+
+/* 表示页面中的所有元素 */
+/* *{
+    color: green;
+} */
+
+/* 表示页面中的所有元素 */
+/* html *{
+    color: green;
+} */
+
+/* 表示div中的所有元素 */
+/* div *{
+    color: green;
+} */
+
+/* 表示类名为a的元素中的所有元素 */
+/* .a *{
+    border:2px solid black;
+} */
+
+/* 把类名为a的元素中的div元素字体加粗 */
+.a div{
+    font-weight: 800;
+}
+
+/* 把类名为a的元素中的类名为b的元素加上边框 */
+/* a=>b */
+.a .b{
+    border:2px solid black;
+}
+
+/* 把类名为a的元素中的类名为b的元素中的类名为c的元素加上黄色边框 */
+/* a=>b=>c */
+.a .b .c{
+    border:2px solid yellow;
+}

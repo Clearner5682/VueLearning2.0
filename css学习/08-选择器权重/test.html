@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>选择器权重</title>
+    <link rel="stylesheet" href="test.css">
+</head>
+<body>
+    <!-- /* 选择器权重：style>ID选择器>类选择器>元素选择器 */
+    /* 可以这样理解：从元素选择器到style依次是个、十、百、千 */
+    /* 但是不同的是，无法进位，也就是十位永远大于个位 */
+    /* 相同权重的选择器中，前面的会被后面的覆盖 */
+    /* 不同权重的选择器中，权重大的会覆盖权重小的 */ -->
+
+
+    <!-- style的权重为1000 -->
+    <table style="background-color: pink;" id="tb" class="table">
+        <thead>
+            <th>style</th>
+            <th>ID选择器</th>
+            <th>Class选择器</th>
+            <th>元素选择器</th>
+        </thead>
+        <tr>
+            <td>千位</td>
+            <td>百位</td>
+            <td>十位</td>
+            <td>个位</td>
+        </tr>
+        <tr>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+    </table>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>display属性</title>
+    <link rel="stylesheet" href="test.css">
+</head>
+<body>
+    <!-- 浏览器中所有元素都有向上向左靠近的趋势 -->
+    <!-- block块级元素，无论元素宽度是多少，都要占据整行 -->
+    <!-- 如果设置的宽度小于整行的宽度，则剩余部分会自动设置成margin -->
+    <!-- div默认就是block的 -->
+    <div class="block">
+        块级元素
+    </div>
+    
+    <!-- 行内元素，很柔顺，可以与其他元素在一行显示 -->
+    <!-- 只有左右margin会渲染出来，上下margin不会渲染 -->
+    <div class="inline">
+        行内元素asdfjklfjaslkjfklasjfkljasklfjasjffasjkfjklasjfkljasklfjklasjfklasjlfkjasklfjlaskfjklasjlfkjasl
+        asdfjklfjaslkjfklasjfkljasklfjasjffasjkfjklasjfkljasklfjklasjfklasjlfkjasklfjlaskfjklasjlfkjasl
+        asdfjklfjaslkjfklasjfkljasklfjasjffasjkfjklasjfkljasklfjklasjfklasjlfkjasklfjlaskfjklasjlfkjasl
+        asdfjklfjaslkjfklasjfkljasklfjasjffasjkfjklasjfkljasklfjklasjfklasjlfkjasklfjlaskfjklasjlfkjaslasdfjklfjaslkjfklasjfkljasklfjasjffasjkfjklasjfkljasklfjklasjfklasjlfkjasklfjlaskfjklasjlfkjasl
+    </div>
+    abcdefg
+
+    <!-- 行内块级元素，既有块级元素的特点，也有行内元素的特点 -->
+    <!-- 上下左右的margin都会渲染出来 -->
+    <div class="inline-block">
+        行内块级元素
+    </div>
+    abcdefg
+</body>
+</html>

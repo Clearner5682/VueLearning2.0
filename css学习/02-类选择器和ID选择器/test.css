@@ -1,0 +1,35 @@
+.red{
+    color:red;
+}
+
+.green{
+    color: green;
+}
+
+.bold{
+    font-weight: bold;
+}
+
+/* 易混淆 */
+/* 注意：两个类名之间没有空格隔开，表示选择同时具有red和bold类名的元素 */
+/* 给同时具有red和bold类名的元素增加1个像素宽度的边框 */
+.red.bold{
+    border:1px solid orange;
+}
+
+/* 易混淆 */
+/* 注意：两个类名之间有空格，表示选择red类名元素下的bold类名的元素 */
+/* 比如下面这种 */
+/* <div class="red"> */
+    /* <div class="bold"> */
+    /* red=>bold类型的选择器，使用空格隔开 */
+    /* </div> */
+/* </div> */
+.red .bold{
+    font-size: larger;
+}
+
+/* ID选择器 */
+#logo{
+    color:gray;
+}

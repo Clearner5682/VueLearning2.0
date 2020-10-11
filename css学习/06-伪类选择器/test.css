@@ -1,0 +1,28 @@
+/* 当链接没有被访问过时（在浏览器历史中没有该链接），显示蓝色的链接 */
+a:link{
+    color: blue;
+}
+
+/* 当链接已经被访问过（在浏览器历史中有该链接），显示灰色的链接 */
+a:visited{
+    color: gray;
+}
+
+/* 当鼠标停留在a标签上时，设备背景色为绿色0.5 */
+a:hover{
+    background-color: rgba(0, 255, 0, 0.5);
+}
+
+/* 当鼠标停留在类名为btn的元素上时，将该元素的样式设置为如下 */
+.btn:hover{
+    background-color: rgba(0, 225, 0, 0.5);
+    border: 1px solid red;
+    outline: none;
+}
+
+/* 类名为btn的元素或a标签被激活时（鼠标按下，不弹起），将该元素的样式设置为如下 */
+.btn:active,a:active{
+    background-color: rgba(0, 0, 225, 0.5);
+    border: 1px solid red;
+    outline: none;
+}

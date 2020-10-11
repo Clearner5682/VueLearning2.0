@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>浮动</title>
+    <link rel="stylesheet" href="test.css">
+</head>
+<body>
+    <div>
+        <!-- 浮动可以理解为让某个div元素脱离标准流，漂浮在标准流之上，和标准流不是一个层次。因此浮动的元素可能会覆盖在标准流元素的上面 -->
+        <!-- 没有浮动的元素会继续构成标准流，标准流的排列方式就是垂直的（从上到下，后一个元素会接着前一个元素的垂直方向的位置） -->
+        <!-- 浮动的元素也会按照浮动元素的顺序横向排列，如果当前行的宽度不足，则后面的元素会移动到下一行浮动 -->
+        <div id="div1">
+             div1
+        </div>
+        <div id="div2">
+             div2
+        </div>
+        <!-- 由于该元素设置了clear:both，因此该元素左右两边都不允许有浮动的元素，因此该元素独占一行 -->
+        <!-- 其他浮动元素被迫移动到下一行 -->
+        <div class="clearfix"></div>
+        <div id="div3">
+             div3
+        </div>
+        <div id="div4">
+             div4
+        </div>
+    </div>
+</body>
+</html>

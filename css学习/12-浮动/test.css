@@ -1,0 +1,43 @@
+body div:first-child{
+    /* width: 600px; */
+    border: 1px solid black;
+}
+
+#div1{
+    background-color: red;
+    width:300px;
+    height: 100px;
+    float: left;
+}
+
+#div2{
+    background-color: green;
+    width: 400px;
+    height: 60px;
+    /* float:right; */
+    float: left;
+}
+
+#div3{
+    background-color: yellow;
+    width: 100px;
+    height: 100px;
+    float: left;
+}
+
+#div4{
+    background-color: aqua;
+    width: 400px;
+    height: 100px;
+    float: right;
+    /* clear:left表示不允许该元素的左边有浮动的元素，只能作用与当前元素 */
+    /* 如果当前元素的左边已有浮动的元素，则当前元素自己会被迫移动到下一行 */
+    clear: left;
+}
+
+/* clear:both表示当前元素的左右两边都不允许有浮动的元素 */
+/* 如果左右两边已有浮动的元素，则当前元素会独占一行，这样浮动的元素就被迫移动到了下一行 */
+/* 由于当前元素没有浮动，因此当前元素属于标准流，该元素独占该行，会导致父元素的高度包含该行 */
+.clearfix{
+    clear: both;
+}
