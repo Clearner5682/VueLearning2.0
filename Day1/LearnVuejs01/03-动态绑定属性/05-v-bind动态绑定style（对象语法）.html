@@ -9,6 +9,7 @@
   <h2 :style="{backgroundColor:'gray',fontSize:'20px'}">{{message}}</h2>
   <h2 :style="{backgroundColor:backgroundColor,fontSize:fontSize+'px'}">{{message}}</h2>
   <h2 :style="getStyle()">{{message}}</h2>
+  <img :src="imgurl" alt="">
 </div>
 
 <script src="../js/vue.js"></script>
@@ -18,7 +19,8 @@
     data:{
       message:'你好啊',
       backgroundColor:'red',
-      fontSize:50
+      fontSize:50,
+      imgurl:'../03-动态绑定属性/imgs/11.jpg'
     },
     methods:{
       getStyle:function(){
