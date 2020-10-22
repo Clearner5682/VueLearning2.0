@@ -6,19 +6,24 @@
 </head>
 <body>
 <div id="app">
-  <cpn>
+  <!-- 如果props不带':'则传递的值直接按字符串处理 -->
+  <cpn entityname="entity1111">
 <!--    2.5以前的版本必须要写template-->
 <!--    使用join函数将插槽的数据转换成","分隔的字符串-->
+<!-- slot-scope表示用来接收组件的数据，对应的名称可以任意写，一般用scope -->
+<!-- 表示用cpn组件的数据去渲染插槽的内容 -->
     <template slot-scope="mydata">
       <span>{{GetLanguageStr(mydata)}}</span>
     </template>
   </cpn>
 <!--  使用插槽的默认内容-->
-  <cpn></cpn>
+<!-- 如果props带':'则传递的值直接按变量处理，这里要注意''的使用 -->
+  <cpn :entityname="'entity2222'"></cpn>
 </div>
 
 <template id="cpn">
   <div>
+    <div>{{entityname}}</div>
 <!--    通过mylanguages特性(mylanguages是自定义的，可以取任意名称，但是不可以使用camel命名规则)可以将子组件内的数据给父组件替换插槽时使用-->
 <!--    即父组件负责用哪些元素来替换插槽，但是插槽的数据却来自于子组件-->
     <slot :mylanguages="pLanguages">
@@ -47,6 +52,12 @@
         data(){
           return{
             pLanguages:['Java','JavaScript','C#','C++','Ruby','Python']
+          }
+        },
+        props:{
+          entityname:{
+            type:String,
+            default:""
           }
         }
       }
