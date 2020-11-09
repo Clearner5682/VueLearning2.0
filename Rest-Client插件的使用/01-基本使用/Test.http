@@ -1,0 +1,37 @@
+# Get http://wwww.baidu.com
+
+# GET请求
+GET http://localhost:5005/api/test/test1 HTTP/1.1
+
+# 注意两个请求之间一定要有"###"分隔
+###
+
+# POST请求，发送参数
+# 注意URL后面的第一行是header的内容
+# body参数必须要和header间隔一行
+POST http://localhost:5005/api/test/test2 HTTP/1.1
+Content-Type: application/json
+my-header:test
+Authorization:Bearer asfdlkjaskljfklasjfkljasklfjklasjfklasjfklasjfkl
+
+{
+    "UserId":"1111",
+    "UserName":"hongyan",
+    "Gender":"Male"
+}
+
+###
+
+POST http://localhost:5005/api/test/upload HTTP/1.1
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW
+
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="text"
+
+title
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="image"; filename="1.png"
+Content-Type: image/png
+
+< ./1.png
+------WebKitFormBoundary7MA4YWxkTrZu0gW--
