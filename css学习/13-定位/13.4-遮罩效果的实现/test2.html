@@ -1,0 +1,40 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<style>
+    .shadow{
+    width:100%;
+    height:100%;
+    position:absolute;
+    left:0;
+    top:0;
+    z-index:998;
+    background-color:#000;
+    opacity:0.6;
+    display:none;
+}
+.addBox{
+    /* 其他属性   */
+    z-index:999;
+}
+</style>
+</head>
+<body>
+    <!--调出子窗口按钮-->
+<button class="add" onclick="addClick();">新增</button>
+<!--子窗口-->
+<div id="addBox" class="addBox">
+    <a href="javascript:;" onclick="jQuery('.addBox').hide();jQuery('.shadow').hide();" class="close">×&nbsp;&nbsp;</a>
+<div>
+<!--遮罩层-->
+<div class="shadow"></div>
+
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.js"></script>
+<script>
+    function addClick(){
+    $(".shadow").css({'display':'block'});
+    $('.addBox').show();
+    return 0;
+}
+</script>
+</body>
+</html>
