@@ -17,7 +17,8 @@
         }
 
         .mask{
-            position: absolute;
+            /* 这里改成fixed更好，如果用absolute会导致滚动条拖动时遮罩盖不住的问题 */
+            position: fixed;
             left:0px;
             top: 0px;
             width: 100%;
@@ -30,7 +31,7 @@
         .loading{
             width: 60px;
             height: 60px;
-            position: absolute;
+            position: fixed;
             top: 50%;
             margin-top: -30px;
             left: 50%;
@@ -51,7 +52,7 @@
     <div class="loading">
         <img src="./loading.gif" onclick="alert('test')">
     </div>
-    <div class="content">
+    <div class="content" style="height: 800px;">
         <h2>这是内容的标题</h2>
         <input type="text" id="txtMessage">
         <input type="button" value="测试" onclick="test()">
