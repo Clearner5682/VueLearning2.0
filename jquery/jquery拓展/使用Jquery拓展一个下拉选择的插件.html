@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.js"></script>
+    <script src="./extendJquery.js"></script>
+</head>
+
+<body>
+    <div>
+        <input type="button" id="btnTest" value="test">
+    </div>
+    <hr>
+    <div id="myselect"></div>
+
+    <script>
+        function sayhello(){
+            alert('hello');
+        }
+        
+        // $(function () {
+        //     $("#btnTest").click(function () {
+        //         alert('test');
+        //         $("#btnTest").css('color','red');
+        //     });
+        // });
+
+        (function () {
+            $("#btnTest").click(function () {
+                alert('test is clicked');
+                $("#btnTest").css('color', 'red');
+            });
+
+            $("#myselect").DropDownList({
+                data:[
+                    {ID:"1111",Name:"hongyan"},
+                    {ID:"2222",Name:"liyang"},
+                ],
+                OnSelect:function(text,value){
+                    console.log(text,value);
+                }
+            });
+        })();
+
+        (function(jq){
+            // jq.fn.extend
+            console.log(jq.fn);
+        })(jQuery);
+    </script>
+</body>
+
+</html>
