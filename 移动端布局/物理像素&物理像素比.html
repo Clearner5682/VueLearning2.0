@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- 视口标签，使用了该标签则以设备的宽度作为视口的宽度，否则以980像素作为视口宽度 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+    <title>Document</title>
+    <style type="text/css">
+    body{
+        margin: 0;
+    }
+
+    div{
+        background-color: pink;
+        width: 300px;
+        height: 300px;
+    }
+    </style>
+</head>
+<body>
+    <!-- 物理像素即设备的像素，是在设备出厂是就确定的，比如我的pc的分辨率是1366*768像素、iphone6的分辨率是1334x750像素-->
+    <!-- 以下面的div为示例，在chrome模拟器中测试可以得出，要显示100%电脑屏幕的宽度所对应的网页像素是1366，要显示100%iphone6的屏幕的宽度对应的网页像素是375 -->
+    <!-- 像素比：多少个物理像素来显示一个网页像素 -->
+    <!-- 经过上面的测试可以得出：电脑屏幕的像素比是1，即1个网页像素用一个物理像素来显示。iphone6的像素比是2，即1个网页像素用2个物理像素来显示 -->
+    <!-- 像素比越高，屏幕显示的越清晰 -->
+    <div>
+
+    </div>
+</body>
+</html>
