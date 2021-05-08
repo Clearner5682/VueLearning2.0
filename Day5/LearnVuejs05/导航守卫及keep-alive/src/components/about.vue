@@ -7,6 +7,7 @@
 
 <script>
 export default {
+    name:'about',
     data(){
         return{
             title:'关于',
@@ -14,7 +15,10 @@ export default {
         }
     },
     created(){
-      console.log('created')
+        console.log('about created')
+    },
+    destroyed(){
+        console.log('about destroyed')
     }
 }
 </script>

@@ -12,9 +12,6 @@ export default {
             title:'关于',
             message:'呵呵呵呵'
         }
-    },
-    created(){
-      console.log('created')
     }
 }
 </script>

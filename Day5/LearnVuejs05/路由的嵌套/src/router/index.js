@@ -13,26 +13,42 @@ import Router from 'vue-router'
 
 // 3.懒加载-ES6的写法
 const home=()=>import('../components/home.vue')
+const HomeNews=()=>import('../components/home-news.vue')
+const HomeMessage=()=>import('../components/home-message.vue')
 const about=()=>import('../components/about.vue')
 const user=()=>import('../components/user.vue')
 
 // 加上下面这行代码，防止重复调用this.$router.push()时报错
-const originalPush = Router.prototype.push
-Router.prototype.push = function push(location) {
-  return originalPush.call(this, location).catch(err => err)
-}
+// const originalPush = Router.prototype.push
+// Router.prototype.push = function push(location) {
+//   return originalPush.call(this, location).catch(err => err)
+// }
 
 Vue.use(Router)
 
-let routes = [
-  {
-    path: '',
-    component: home
+let routes = [{
+    path: '/',
+    // component: home,
+    redirect:'/home'
   },
   {
     name: 'home',
     path: '/home',
-    component: home
+    component: home,
+    children:[
+      {
+        path:'',
+        component:HomeNews
+      },
+      {
+        path:'news',
+        component:HomeNews
+      },
+      {
+        path:'message',
+        component:HomeMessage
+      }
+    ]
   },
   {
     name: 'about',
