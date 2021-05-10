@@ -41,3 +41,18 @@ body div:first-child{
 .clearfix{
     clear: both;
 }
+
+#div5{
+    background-color: pink;
+    /* height: 200px; */
+}
+
+#div6{
+    background-color:yellow;
+    height: 60px;
+}
+
+#div7{
+    background-color: orange;
+    height: 60px;
+}
