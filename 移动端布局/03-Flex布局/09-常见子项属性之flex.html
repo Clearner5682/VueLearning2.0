@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>flex属性就是将父元素高度（或宽度）减去子元素的高度（或宽度）之后剩余的空间均分，flex的值表示子元素占有的份数</h3>
+    <section>
+        <div>div1</div>
+        <div>div2</div>
+        <div>div3</div>
+    </section>
+
+
+    <style>
+        h3{
+            background-color: orangered;
+            color: yellow;
+        }
+
+        section{
+            display: flex;
+            width: 60%;
+            height: 200px;
+            margin: 0 auto;
+            background-color: pink;
+        }
+
+        section div:nth-child(1){
+            width: 100px;
+            background-color: green;
+        }
+
+        section div:nth-child(2){
+            /* width: 100px; */
+            background-color: yellow;
+            flex: 1;
+        }
+
+        section div:nth-child(3){
+            width: 100px;
+            background-color: blue;
+        }
+    </style>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <span>span1</span>
+        <span>span2</span>
+        <span>span3</span>
+    </div>
+
+
+    <style>
+        div{
+            display: flex;
+            width: 60%;
+            height: 200px;
+            margin: 0 auto;
+            background-color: pink;
+        }
+
+        div span{
+            flex: 1;
+            height: 100px;
+        }
+
+        div span:nth-child(1){
+            background-color: purple;
+        }
+
+        div span:nth-child(2){
+            background-color: royalblue;
+            /* align-self决定了子元素在侧轴的排列方式，可以覆盖父元素的align-items属性 */
+            align-self: flex-end;
+            /* order决定了子元素排列的顺序，默认为0，-1比0小，因此第二个子元素排到了第一个位置 */
+            order: -1;
+        }
+
+        div span:nth-child(3){
+            background-color: greenyellow;
+            align-self: center;
+        }
+    </style>
+</body>
+</html>
