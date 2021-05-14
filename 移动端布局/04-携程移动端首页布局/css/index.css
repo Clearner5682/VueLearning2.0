@@ -13,6 +13,12 @@ body{
     /* border: 1px solid blue; */
 }
 
+a{
+    color: #222;
+    text-decoration:none;
+}
+
+/* Search */
 .search-index{
     display: flex;
     /* 固定定位跟父级没有关系，它以屏幕为准 */
@@ -25,7 +31,7 @@ body{
     top: 0;
     /* left: 0; */
     height: 44px;
-    background-color: pink;
+    /* background-color: pink; */
     /* 使用了固定定位，再使用margin:0 auto是无效的，因此这里注释掉 */
     /* margin: 0 auto; */
     /* 这里为了居中对齐采用下面的方式 */
@@ -34,15 +40,161 @@ body{
     /* 相当于往左移动自身宽度的50% */
     transform: translateX(-50%);
     -webkit-transform: translateX(-50%);
+    background-color: #f6f6f6;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
 }
 
 .search{
+    position: relative;
     flex: 1;
-    background-color: green;
+    /* background-color: green; */
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    height: 26px;
+    line-height: 24px;
+    margin: 7px 10px;
+    border-radius: 5px;
+    padding-left: 25px;
+    font-size: 12px;
+    /* box-shadow的属性值解释:h-shadow<水平阴影的位置>,v-shadow<垂直阴影的位置>,blur<模糊距离>,color */
+    box-shadow: 0 2px 4px rgba(0,0,0,.2);
+}
+
+.search::before{
+    content: "";
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: 15px;
+    height: 15px;
+    background: url('../images/search15.png') no-repeat;
 }
 
 .my{
     width: 44px;
     height: 44px;
-    background-color: purple;
+    /* background-color: purple; */
+    /* border: 1px solid red; */
+    text-align: center;
+    font-size: .75rem;
+    text-decoration: none;
+    cursor: text;
+    color: black;
+    /* line-height: 22px; */
 }
+
+.my:before{
+    content: "";
+    display: block;
+    width: 22px;
+    height: 22px;
+    background: url('../images/my22.png') no-repeat;
+    margin: 5px auto -2px;
+    cursor:auto;
+}
+
+/* Focus */
+.focus{
+    position: relative;
+    /* 由于搜索栏采用固定定位，脱离的标准流，不占用位置，因此这里要设置margin-top */
+    margin-top: 44px;
+    /* background-color: pink; */
+}
+
+.focus img{
+    width: 100%;
+}
+
+.focusSwitch{
+    width: 80px;
+    height: 25px;
+    line-height: 25px;
+    right: 5px;
+    bottom: 5px;
+    position: absolute;
+    /* border: 1px solid red; */
+    /* background-color: rgba(0,0,0,.2); */
+}
+
+.focusSwitch ul{
+    width: 100%;
+    padding: 0px;
+    margin: 0px;
+}
+
+li{
+    /* 让无序列表的前面没有实心圆点 */
+    list-style: none;
+}
+
+.focusSwitch li{
+    display: inline-block;
+    background-color: #fff;
+    width: 10px;
+    height: 10px;
+    margin: 3px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.focusSwitch li:hover{
+    background-color: orange;
+}
+
+/* local-nav */
+.local-nav{
+    display: flex;
+    margin: 3px 4px;
+    height: 64px;
+    /* background-color: pink; */
+    border-radius: 8px;
+    padding: 0;
+}
+
+.local-nav li{
+    flex: 1;
+    text-align: center;
+}
+
+.local-nav li a{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content:flex-start;
+    align-items:center;
+}
+
+.local-nav li a span[class^="local-nav-icon"]{
+    width: 32px;
+    height: 32px;
+    margin-top: 5px;
+}
+
+.local-nav-icon-icon1{
+    background: url('../images/景点.png') no-repeat;
+    background-size: 32px auto;
+}
+
+.local-nav-icon-icon2{
+    background: url('../images/门票.png') no-repeat;
+    background-size: 32px auto;
+}
+
+.local-nav-icon-icon3{
+    background: url('../images/美食.png') no-repeat;
+    background-size: 32px auto;
+}
+
+.local-nav-icon-icon4{
+    background: url('../images/周边游.png') no-repeat;
+    background-size: 32px auto;
+}
+
+.local-nav-icon-icon5{
+    background: url('../images/旅游.png') no-repeat;
+    background-size: 32px auto;
+}
+
+
+
