@@ -3,6 +3,7 @@ body{
     -webkit-tap-highlight-color: transparent;
     -webkit-text-size-adjust: none;
     -moz-user-select: none;
+    user-select: none;
     min-width: 320px;
     max-width: 540px;
     margin: 0 auto;

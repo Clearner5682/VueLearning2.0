@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container1">
+        <div>div1</div>
+        <div>div2</div>
+        <div>div3</div>
+    </div>
+
+    <div class="container2">
+
+    </div>
+
+    <style>
+        .container1{
+            height: 200px;
+            background-color: pink;
+        }
+
+        /* 向父级容器的子元素前面追加一个子元素 */
+        .container1::before{
+            /* 使用before伪类选择器时，必须设置content属性 */
+            content: '我是通过before伪类选择器添加的';
+            width: 100px;
+            height: 100px;
+            background-color: royalblue;
+            float: left;
+        }
+
+        /* 向父级容器的子元素后面追加一个子元素 */
+        .container1::after{
+            /* 使用after伪类选择器时，必须设置content属性 */
+            content: '我是通过after伪类选择器添加的';
+            width: 100px;
+            height: 100px;
+            background-color: orange;
+            float: right;
+        }
+
+        .container1 div:nth-child(1){
+            width: 200px;
+            height: 100%;
+            background-color: purple;
+            float: left;
+        }
+
+        .container1 div:nth-child(2){
+            width: 200px;
+            height: 100%;
+            background-color: yellow;
+            float: left;
+        }
+
+        .container1 div:nth-child(3){
+            width: 200px;
+            height: 100%;
+            background-color: green;
+            float: left;
+        }
+
+        .container2{
+            height: 200px;
+            background-color: pink;
+            margin-top: 50px;
+        }
+
+        .container2:after{
+            content: "我是通过after伪类选择器添加的子元素";
+            display: block;
+            width: 100px;
+            height: 100px;
+            margin: 0 auto;
+            background-color: red;
+        }
+    </style>
+</body>
+</html>
