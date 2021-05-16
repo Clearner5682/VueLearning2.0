@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <!-- <h3>从左到右，从红色渐变成蓝色</h3> -->
+        <div class="items">
+            <a href="">test</a>
+        </div>
+        <!-- <h3>从上到下，从红色渐变成蓝色</h3> -->
+        <div class="items">
+            <a href="">test</a>
+        </div>
+        <!-- <h3>从左上到右下，从红色渐变成蓝色</h3> -->
+        <div class="items">
+            <a href="">test</a>
+        </div>
+    </div>
+
+    <style>
+        .items {
+            height: 200px;
+            margin: 0 auto;
+            /* max-width: 500px; */
+            background-color: rgba(255, 192, 33, .5);
+        }
+
+        .items:nth-child(1){
+            border: 1px solid red;
+            background-image: linear-gradient(left, red, blue);
+            background-image: -webkit-linear-gradient(left, red, blue);
+        }
+
+        .items:nth-child(2){
+            border: 1px solid red;
+            background-image: linear-gradient(top, red, blue);
+            background-image: -webkit-linear-gradient(top, red, blue);
+        }
+
+        .items:nth-child(3){
+            border: 1px solid red;
+            background-image: linear-gradient(top left, red, blue);
+            background-image: -webkit-linear-gradient(top left, red, blue);
+        }
+
+        .items:nth-child(1) a:nth-child(1){
+            color: red;
+        }
+    </style>
+</body>
+
+</html>

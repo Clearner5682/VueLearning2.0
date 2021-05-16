@@ -207,10 +207,57 @@ nav{
     margin: 4px;
     border: 1px solid #fff;
     border-radius: 8px;
+    /* 当内容超出nav时，就不显示超出的内容 */
+    /* 因此当nav设置了圆角，但是里面的div没有设置圆角时，如果不设置overflow:hidden就会导致看不到圆角 */
+    overflow: hidden;
 }
 
 .nav-common{
     /* background-color: pink; */
     height: 88px;
+    background-color: pink;
+    display: flex;
 }
+
+nav .nav-common:nth-child(2){
+    margin: 3px 0;
+}
+
+.nav-items{
+    flex: 1;
+    display: flex;
+}
+
+/* 这里-n+2表示前2个子元素 */
+.nav-items:nth-child(-n+2){
+    /* 这里使用了flex布局，所有的盒子都是css3的盒子模型（box-sizing:border-box） */
+    /* 因此即使给盒子加了边框（盒子会变大），也不会换行 */
+    border-right: 1px solid #fff;
+}
+
+.nav-items:nth-child(n+2){
+    flex-direction: column;
+}
+
+.nav-items a{
+    flex: 1;
+    text-align: center;
+    line-height: 44px;
+    color: #fff;
+    font-size: 14px;
+    text-shadow: 0 1px 1px rgba(0,0,0,.2);
+}
+
+.nav-items a:nth-child(1){
+    border-bottom: 1px solid #fff;
+}
+
+/* 第一个nav-items下面的a标签去掉下边框 */
+.nav-items:nth-child(1) a{
+    border-bottom: 0;
+    line-height: 70px;
+    background: url('../images/nav-hotel.png') no-repeat bottom center;
+    background-size: 81px auto;
+}
+
 
