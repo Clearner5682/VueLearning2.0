@@ -253,11 +253,172 @@ nav .nav-common:nth-child(2){
 }
 
 /* 第一个nav-items下面的a标签去掉下边框 */
-.nav-items:nth-child(1) a{
+.nav-common:nth-child(1) .nav-items:nth-child(1) a{
     border-bottom: 0;
     line-height: 70px;
     background: url('../images/nav-hotel.png') no-repeat bottom center;
     background-size: 81px auto;
 }
 
+.nav-common:nth-child(2) .nav-items:nth-child(1) a{
+    border-bottom: 0;
+    line-height: 70px;
+    background: url('../images/nav-flight.png') no-repeat bottom center;
+    background-size: 81px auto;
+}
 
+.nav-common:nth-child(3) .nav-items:nth-child(1) a{
+    border-bottom: 0;
+    line-height: 70px;
+    background: url('../images/nav-holiday.png') no-repeat bottom center;
+    background-size: 81px auto;
+}
+
+.nav-common:nth-child(1){
+    background: -webkit-linear-gradient(left,#fa5a55,#fa994d);
+}
+
+.nav-common:nth-child(2){
+    background: -webkit-linear-gradient(left,#4b90ed,#53bced);
+}
+
+.nav-common:nth-child(3){
+    background: -webkit-linear-gradient(left,#34c2a9,#6cd559);
+}
+
+/* bottom-nav */
+.bottom-nav{
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    height: 110px;
+    margin: 10px 4px 0px 4px;
+    /* background-color: pink; */
+    /* border: 1px solid red; */
+}
+
+.bottom-nav ul{
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.bottom-nav ul li{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    /* border: 1px solid orange; */
+}
+
+.bottom-nav ul li a{
+    font-size: 12px;
+    text-align: center;
+    text-decoration: none;
+}
+
+.bottom-nav-icon1{
+    width: 28px;
+    height: 28px;
+    background: url('../images/自由行.png');
+}
+
+.bottom-nav-icon2{
+    width: 28px;
+    height: 28px;
+    background: url('../images/wifi电话卡.png');
+}
+
+.bottom-nav-icon3{
+    width: 28px;
+    height: 28px;
+    background: url('../images/保险.png');
+}
+
+.bottom-nav-icon4{
+    width: 28px;
+    height: 28px;
+    background: url('../images/购物.png');
+}
+
+.bottom-nav-icon5{
+    width: 28px;
+    height: 28px;
+    background: url('../images/导游.png');
+}
+
+.bottom-nav-icon6{
+    width: 28px;
+    height: 28px;
+    background: url('../images/飞机.png');
+}
+
+.bottom-nav-icon7{
+    width: 28px;
+    height: 28px;
+    background: url('../images/礼品卡.png');
+}
+
+.bottom-nav-icon8{
+    width: 28px;
+    height: 28px;
+    background: url('../images/银行卡.png');
+}
+
+.bottom-nav-icon9{
+    width: 28px;
+    height: 28px;
+    background: url('../images/社区.png');
+}
+
+.bottom-nav-icon10{
+    width: 28px;
+    height: 28px;
+    background: url('../images/更多.png');
+}
+
+/* bottom-tabbar */
+.bottom-tabbar{
+    display: flex;
+    flex-direction: row;
+    height: 61px;
+    margin: 0px 0px 10px 0px;
+    /* background-color: pink; */
+    border-top: 1px solid #c2c2c2;
+    border-bottom: 1px solid #c2c2c2;
+}
+
+.bottom-tabbar-item{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.bottom-tabbar-item a{
+    text-align: center;
+    font-size: 12px;
+}
+
+.bottom-tabbar-item-icon1{
+    width: 20px;
+    height: 20px;
+    background: url('../images/电话.png');
+}
+
+.bottom-tabbar-item-icon2{
+    width: 20px;
+    height: 20px;
+    background: url('../images/下载.png');
+}
+
+.bottom-tabbar-item-icon3{
+    width: 20px;
+    height: 20px;
+    background: url('../images/我的.png');
+}
