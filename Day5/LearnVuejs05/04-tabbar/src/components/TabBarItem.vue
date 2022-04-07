@@ -1,9 +1,13 @@
 <template>
-  <div class="itemContainer">
+  <div class="itemContainer" @click="navigate">
     <div class="iconArea">
-      <span :class="'iconfont '+icon"></span>
+      <span :class="'iconfont '+icon">
+      </span>
     </div>
-    <div class="textArea">{{text}}</div>
+    <div class="textArea">
+      <!-- <router-link :to="path" class="router-link">{{text}}</router-link> -->
+      {{text}}
+    </div>
   </div>
 </template>
 
@@ -20,6 +24,14 @@ export default {
     },
     icon:{
       type:String
+    },
+    path:{
+      type:String
+    }
+  },
+  methods: {
+    navigate($event){
+      alert(this.path);
     }
   }
 }
@@ -61,6 +73,7 @@ export default {
   /* border: 1px solid red; */
   border-collapse: initial;
   text-align: center;
+  cursor: pointer;
 }
 
 .iconArea{
@@ -77,4 +90,9 @@ export default {
 /* .iconfont.icon-home{
   color:yellow;
 } */
+
+.router-link{
+  text-decoration: none;
+  color: black;
+}
 </style>
