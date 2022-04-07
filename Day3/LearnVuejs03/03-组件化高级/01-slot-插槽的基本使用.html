@@ -13,11 +13,15 @@
   <cpn>
 <!--    如果有多个元素，则多个元素会被一起放到插槽内-->
     <div>这是一个div</div>
-    <spn>这是一个span</spn>
+    <span>这是一个span</span>
   </cpn>
 <!--  当没有指定要放到插槽中的元素时，会使用默认元素-->
   <cpn></cpn>
-  <cpn></cpn>
+  <cpn>
+    <ul>
+      <li v-for="item in itemList">{{item}}</li>
+    </ul>
+  </cpn>
 </div>
 
 <template id="cpn">
@@ -36,7 +40,10 @@
     el:'#app',
     data:{
       message:'你好啊',
-      spanBorder:'1px solid red'
+      spanBorder:'1px solid red',
+      itemList:[
+        '苹果','香蕉','梨子','橘子','哈密瓜'
+      ]
     },
     components:{
       'cpn':{

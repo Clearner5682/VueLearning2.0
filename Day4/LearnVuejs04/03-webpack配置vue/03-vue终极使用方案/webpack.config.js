@@ -36,7 +36,7 @@ module.exports = {
     })
   ],
   devServer:{
-    host:'192.168.0.109',
+    host:'localhost',
     port:9999,
     open:true,
     contentBase:'./dist/',

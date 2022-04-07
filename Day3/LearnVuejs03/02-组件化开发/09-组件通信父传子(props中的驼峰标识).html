@@ -7,9 +7,11 @@
 <body>
 <div id="app">
 <!--  这里不能使用驼峰标志cInfo，否则无法给子组件传值-->
-<!--  如果子组件使用的名称为cInfo，这里要写成c-Info-->
-<!--  <cpn :cInfo="info"></cpn>-->
-  <cpn :c-Info="info"></cpn>
+<!--  如果子组件的props使用的名称为cInfo，这里要写成c-Info或者c-info-->
+<!-- :cInfo这种写法会报错 -->
+  <!-- <cpn :cInfo="info"></cpn> -->
+  <cpn :c-info="info"></cpn>
+  <!-- <cpn :c-Info="info"></cpn> -->
 </div>
 
 <template id="cpn">
