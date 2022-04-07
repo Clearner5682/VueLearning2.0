@@ -29,10 +29,7 @@ Vue.use(Router)
 let routes = [
   {
     path: '',
-    component: home,
-    meta:{
-      title:'首页'
-    }
+    redirect: '/home'
   },
   {
     name: 'home',
@@ -75,7 +72,7 @@ let routes = [
     },
     // 路由独享的守卫
     beforeEnter:(to,from,next)=>{
-      console.log('路由独享的守卫:'+to.path);
+      console.log('user独享的守卫:',to,from);
       next();
     }
   }
@@ -89,17 +86,13 @@ let router = new Router({
 })
 
 router.beforeEach((to,from,next)=>{
-  console.log('执行全局前置守卫')
-  console.log(to)
-  console.log(from)
+  console.log('全局beforeEach:',to,from);
   
   next();//这里必须要调用next()才能成功跳转路由
 });
 
 router.afterEach((to,from)=>{
-  console.log('执行全局后置钩子')
-  console.log(to)
-  console.log(from)
+  console.log('全局afterEach:',to,from);
 
   // 小功能：组件跳转时把网页的title也改成相应的名称
   // 需要使用meta存放路由的描述信息

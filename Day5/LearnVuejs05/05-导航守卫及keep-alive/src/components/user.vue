@@ -17,6 +17,10 @@ export default {
     created(){
         console.log('user created')
     },
+    // 注意：只有组件被包含在keep-alive中时才会触发activated，否则只会created和destroyed
+    activated () {
+        console.log('user activated')
+    },
     destroyed(){
         console.log('user destroyed')
     }
