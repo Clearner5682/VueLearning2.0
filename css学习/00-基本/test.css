@@ -1,6 +1,0 @@
-/* 第三种引入CSS样式的方式，通过@import */
-/* @import url(./common.css); */
-
-div{
-    background-color: yellow;
-}
